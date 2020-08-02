@@ -35,7 +35,6 @@ FILES :=                    \
     Coverage1               \
     Coverage2               \
     Coverage3               \
-    IsPrime                 \
     Variables               \
     Arguments               \
     Returns                 \
