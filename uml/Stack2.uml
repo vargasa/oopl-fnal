@@ -1,0 +1,15 @@
+@startuml
+Stack *- "1" Vector
+
+class Vector {
+    + void push_back ()
+    + void pop_back ()
+    }
+
+class Stack {
+    - Vector _c
+    + void push ()
+    + void pop ()
+    }
+
+@enduml

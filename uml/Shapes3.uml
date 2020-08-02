@@ -1,0 +1,34 @@
+@startuml
+AbstractShape <|-- Circle
+
+class AbstractShape {
+    - int x
+    - int y
+    + friend bool operator == (const Shape&, const Shape&)
+    + friend istream& operator >> (istream&, Shape&)
+    + friend ostream& operator << (ostream&, const Shape&)
+    # {abstract} virtual bool equals (const Shape&) const
+    # {abstract} virtual istream& read (istream&)
+    # {abstract} virtual ostream& write (ostream&) const
+    + AbstractShape (int x, int y)
+    + virtual ~AbstractShape ()
+    + {abstract} virtual double area () const
+    + {abstract} virtual AbstractShape* clone () const
+    + void move (int x, int y)
+    }
+
+class Circle {
+    - int r
+    + friend bool operator == (const Circle&, const Circle&)
+    + friend istream& operator >> (istream&, Circle&)
+    + friend ostream& operator << (ostream&, const Circle&)
+    # bool equals (const Shape&) const override
+    # istream& read (istream&) override
+    # ostream& write (ostream&) const override
+    + Circle (int x, int y, int r)
+    + double area () const override
+    + Circle* clone () const override
+    + int radius () const
+    }
+
+@enduml

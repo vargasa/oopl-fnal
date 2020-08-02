@@ -1,0 +1,14 @@
+@startuml
+Vector <|-- Stack
+
+class Vector {
+    + void push_back ()
+    + void pop_back ()
+    }
+
+class Stack {
+    + void push ()
+    + void pop ()
+    }
+
+@enduml

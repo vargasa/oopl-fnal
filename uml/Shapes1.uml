@@ -1,0 +1,25 @@
+@startuml
+Shape <|-- Circle
+
+class Shape {
+    - int x
+    - int y
+    + friend bool operator == (const Shape&, const Shape&)
+    + friend istream& operator >> (istream&, Shape&)
+    + friend ostream& operator << (ostream&, const Shape&)
+    + Shape (int x, int y)
+    + double area () const
+    + void move (int x, int y)
+    }
+
+class Circle {
+    - int r
+    + friend bool operator == (const Circle&, const Circle&)
+    + friend istream& operator >> (istream&, Circle&)
+    + friend ostream& operator << (ostream&, const Circle&)
+    + Circle (int x, int y, int r)
+    + double area () const override
+    + int radius () const
+    }
+
+@enduml

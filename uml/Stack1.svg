@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="226px" preserveAspectRatio="none" style="width:138px;height:226px;" version="1.1" viewBox="0 0 138 226" width="138px" zoomAndPan="magnify"><defs><filter height="300%" id="f19i4wttg1mtke" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[ea775af43a0da7cb543d6bee4ab62c40]
+class Vector--><rect fill="#FEFECE" filter="url(#f19i4wttg1mtke)" height="73.9102" id="Vector" style="stroke: #A80036; stroke-width: 1.5;" width="121" x="6" y="8"/><ellipse cx="44.4" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M46.8731,30.1431 Q46.2921,30.4419 45.6529,30.5913 Q45.0138,30.7407 44.3082,30.7407 Q41.8014,30.7407 40.4815,29.0889 Q39.1617,27.437 39.1617,24.3159 Q39.1617,21.1865 40.4815,19.5347 Q41.8014,17.8828 44.3082,17.8828 Q45.0138,17.8828 45.6612,18.0322 Q46.3087,18.1816 46.8731,18.4805 L46.8731,21.2031 Q46.2423,20.6221 45.6488,20.3523 Q45.0553,20.0825 44.4244,20.0825 Q43.0797,20.0825 42.3949,21.1492 Q41.7101,22.2158 41.7101,24.3159 Q41.7101,26.4077 42.3949,27.4744 Q43.0797,28.541 44.4244,28.541 Q45.0553,28.541 45.6488,28.2712 Q46.2423,28.0015 46.8731,27.4204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="37" x="63.6" y="28.5352">Vector</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="126" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="126" y1="48" y2="48"/><ellipse cx="17" cy="59" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="95" x="26" y="62.6348">void push_back ()</text><ellipse cx="17" cy="71.9551" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="89" x="26" y="75.5898">void pop_back ()</text><!--MD5=[1a47157467d69c83c0a10e9152875283]
+class Stack--><rect fill="#FEFECE" filter="url(#f19i4wttg1mtke)" height="73.9102" id="Stack" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="21.5" y="142"/><ellipse cx="49.1" cy="158" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M51.5731,164.1431 Q50.9921,164.4419 50.3529,164.5913 Q49.7138,164.7407 49.0082,164.7407 Q46.5014,164.7407 45.1815,163.0889 Q43.8617,161.437 43.8617,158.3159 Q43.8617,155.1865 45.1815,153.5347 Q46.5014,151.8828 49.0082,151.8828 Q49.7138,151.8828 50.3612,152.0322 Q51.0087,152.1816 51.5731,152.4805 L51.5731,155.2031 Q50.9423,154.6221 50.3488,154.3523 Q49.7553,154.0825 49.1244,154.0825 Q47.7797,154.0825 47.0949,155.1492 Q46.4101,156.2158 46.4101,158.3159 Q46.4101,160.4077 47.0949,161.4744 Q47.7797,162.541 49.1244,162.541 Q49.7553,162.541 50.3488,162.2712 Q50.9423,162.0015 51.5731,161.4204 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="30" x="65.9" y="162.5352">Stack</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="22.5" x2="110.5" y1="174" y2="174"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="22.5" x2="110.5" y1="182" y2="182"/><ellipse cx="32.5" cy="193" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="64" x="41.5" y="196.6348">void push ()</text><ellipse cx="32.5" cy="205.9551" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="58" x="41.5" y="209.5898">void pop ()</text><!--MD5=[26d229be8d205479de9296b535b7a3ba]
+reverse link Vector to Stack--><path d="M66.5,102.38 C66.5,115.8 66.5,129.76 66.5,141.97 " fill="none" id="Vector&lt;-Stack" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="59.5,102.07,66.5,82.07,73.5,102.07,59.5,102.07" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[1edc98c32dfd5248bacbc42ff1a57fb1]
+@startuml
+Vector <|- - Stack
+
+class Vector {
+    + void push_back ()
+    + void pop_back ()
+    }
+
+class Stack {
+    + void push ()
+    + void pop ()
+    }
+
+@enduml
+
+PlantUML version 1.2020.07(Sun Apr 19 06:42:40 CDT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 13.0.2+8
+Operating System: Mac OS X
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
