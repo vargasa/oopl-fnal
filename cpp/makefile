@@ -35,9 +35,11 @@ FILES :=                    \
     Coverage1               \
     Coverage2               \
     Coverage3               \
+    IsPrimeT                \
     Variables               \
     Arguments               \
     Returns                 \
+    IncrT                   \
     Exceptions              \
     Operators               \
     Consts                  \
@@ -139,6 +141,7 @@ sync:
 	@echo ~/exercises/cpp/
 	@rsync -p -r -t -u -v --delete         \
     --include "IsPrimeT.cpp"               \
+    --include "IncrT.cpp"                  \
     --exclude "*"                          \
     ~/exercises/cpp/ .
 	@rsync -p -r -t -u -v --delete         \

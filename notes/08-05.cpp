@@ -1,5 +1,5 @@
 // -----------
-// Mon,  3 Aug
+// Wed,  5 Aug
 // -----------
 
 /*
@@ -303,49 +303,265 @@ int post_incr (int& r) {
 	r += 1;
 	return t;}
 
+/*
+introduce exceptions
 
+assertions are not good for testing
+a testing framework is (Google Test, Catch2, Boost)
 
+assertions are not good for user error
+exceptions are
 
+let's pretend that we're in C, and C does not have exceptions
+*/
 
+/*
+using the return
+*/
 
+int f (int j) {
+	...
+	if (...) {
+		// something is wrong
+		return <special value>
+	...
+	}
 
+void g (...) {
+	int i = 2;
+	int k = f(i);
+	if (k == <special value>)
+		// something is wrong
+	...}
 
+/*
+using a global
+*/
 
+int h = 0;
 
+int f (int j) {
+	...
+	if (...) {
+		// something is wrong
+		h = <special value>
+		return ...
+	...
+	}
 
+void g (...) {
+	int i = 2;
+	h = 0;
+	int k = f(i);
+	if (h == <special value>)
+		// something is wrong
+	...}
 
+/*
+using an argument
+*/
 
+int f (int j, int& e2) {
+	...
+	if (...) {
+		// something is wrong
+		e2 = <special value>
+		return ...
+	...
+	}
 
+void g (...) {
+	int i = 2;
+	int e = 0;
+	int k = f(i, e);
+	if (e == <special value>)
+		// something is wrong
+	...}
 
+/*
+three mechanisms have the deficiency that is the caller doesn't check,
+the error propagates
+*/
 
+/*
+using exceptions
+*/
 
+int f (int j) {
+	...
+	if (...) {
+		// something is wrong
+		throws X(...);}
+	...
+	}
 
+void g (...) {
+	int i = 2;
+	try {
+		...
+		int k = f(i, e);
+		...}
+	catch (E e) {
+		// something is wrong
+		}
+	...}
 
+void h (...) {
+	...
+	try {
+		g(...);
+		}
+	catch (E e)
+		...
+	...}
 
+/*
+1. let's assume nothing went wrong
+	all of f
+	all of the try body
+	catcher does not run
+	rest of g
 
+2. let's assume something went wrong and we throw what we're catching
+	not do the rest of f
+	not do the rest of the try body
+	catcher does run
+	rest of g
 
+3. let's assume something went wrong and we throw something other than what we're catching
+	not do the rest of f
+	not do the rest of the try body
+	catcher does NOT run
+	not do the rest of g
+*/
 
+void f (...)
+	...
+	if (...)
+		throw Mammal(...)
+	...
 
+void g (...)
+	...
+	try {
+		...
+		}
+	catch (Mammal e) {
+		...}
+	...}
 
+/*
+a tiger is a mammal
+*/
 
+void f (...)
+	...
+	if (...)
+		throw Tiger(...)
+	...
 
+void g (...)
+	...
+	try {
+		...
+		}
+	catch (Mammal e) {
+		...}
+	...}
 
+void f (...)
+	...
+	if (...)
+		throw Tiger(...)
+	...
 
+void g (...)
+	...
+	try {
+		...
+		}
+	catch (Mammal e) {
+		...}
+	catch (Tiger e) {   // never will call
+		...}
+	...}
 
+void f (...)
+	...
+	if (...)
+		throw Tiger(...)
+	...
 
+void g (...)
+	...
+	try {
+		...
+		}
+	catch (Tiger e) {   // always put the specialized type first
+		...}
+	catch (Mammal e) {
+		...}
+	...}
 
+void f (...)
+	...
+	if (...)
+		throw Tiger(...)
+	...
 
+void g (...)
+	...
+	try {
+		...
+		}
+	catch (Mammal e) { // loses information
+		...}
+	...}
 
+Tiger  x(...); // a tiger object going to be bigger than a Mammal object
+Mammal y = x;  // still legal, we only get the Mammal data from the Tiger
+// loses information
 
+void f (...)
+	...
+	if (...) {
+		Tiger x(...); // this is about to die!!!
+		throw &x;}
+	...
 
+void g (...)
+	...
+	try {
+		...
+		}
+	catch (Mammal* e) { // undefined!!!
+		...}
+	...}
 
+Tiger   x(...);
+Mammal* y = &x;
 
+Mammal x(...);
+Tiger* y = x;  // no
 
+void f (...)
+	...
+	if (...) {
+		throw Tiger(...); // we don't lose any data
+	...
 
+void g (...)
+	...
+	try {
+		...
+		}
+	catch (Mammal& e) { // well defined
+		...}
+	...}
 
+Tiger   x(...);
+Mammal& y = x;
 
+struct Mammal {...};
 
-
-
-
-
+struct Tiger : Mammal {...};
