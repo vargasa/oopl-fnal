@@ -527,7 +527,7 @@ T2 copy (T1 b1, T1 e1, T2 b2) {
 	return b2;}
 
 template <typename T1, typename T2>
-void fill (T1 b, T1 e, T2 v) {
+void fill (T1 b, T1 e, const T2& v) {
 	while (b != e) {
 		*b = v;
 		++b;}}

@@ -43,6 +43,9 @@ FILES :=                    \
     Exceptions              \
     Operators               \
     Consts                  \
+    EqualT                  \
+    CopyT                   \
+    FillT                   \
     Arrays1                 \
     Arrays2                 \
     Types                   \
@@ -143,6 +146,9 @@ sync:
     --include "IsPrimeT.cpp"               \
     --include "IncrT.cpp"                  \
     --include "StrCmpT.cpp"                \
+    --include "EqualT.cpp"                 \
+    --include "CopyT.cpp"                  \
+    --include "FillT.cpp"                  \
     --exclude "*"                          \
     ~/exercises/cpp/ .
 	@rsync -p -r -t -u -v --delete         \
