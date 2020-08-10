@@ -25,7 +25,7 @@ void test2 () {
     assert(i == 3);
     assert(j == 2);
 //  i++++;          // error: lvalue required as increment operand
-//  ++(i++);        // error: lvalue required as increment operand}
+//  ++(i++);        // error: lvalue required as increment operand
     }
 
 void test3 () {
@@ -33,7 +33,7 @@ void test3 () {
     int j = -i;      // negation
     assert(i ==  2);
     assert(j == -2);
-//  ++-i;            // error: lvalue required as increment operand}
+//  ++-i;            // error: lvalue required as increment operand
     }
 
 void test4 () {
@@ -53,7 +53,7 @@ void test5 () {
     assert(i == 2);
     assert(j == 3);
     assert(k == 5);
-//  ++(i + j);      // error: lvalue required as increment operand}
+//  ++(i + j);      // error: lvalue required as increment operand
     }
 
 void test6 () {
@@ -73,7 +73,7 @@ void test7 () {
     assert(i == 5);
     assert(j == 2);
     assert(k == 2);
-//  ++(i / j);       // error: lvalue required as increment operand}
+//  ++(i / j);       // error: lvalue required as increment operand
     }
 
 void test8 () {
@@ -93,7 +93,7 @@ void test9 () {
     assert(i == 12);
     assert(j == 10);
     assert(k ==  2);
-//  ++(i % j);       // error: lvalue required as increment operand}
+//  ++(i % j);       // error: lvalue required as increment operand
     }
 
 void test10 () {
@@ -113,7 +113,7 @@ void test11 () {
     assert(i ==  2);
     assert(j == -3);
     assert(k ==  2);
-//  ++~i;             // error: lvalue required as increment operand}
+//  ++~i;             // error: lvalue required as increment operand
     }
 
 void test12 () {
@@ -123,7 +123,7 @@ void test12 () {
     assert(i == 2);
     assert(j == 3);
     assert(k == 16);
-//  ++(i << j);      // error: lvalue required as increment operand}
+//  ++(i << j);      // error: lvalue required as increment operand
     }
 
 void test13 () {
@@ -143,7 +143,7 @@ void test14 () {
     assert(i == 10);
     assert(j == 12);
     assert(k ==  8);
-//  ++(i & j);       // error: lvalue required as increment operand}
+//  ++(i & j);       // error: lvalue required as increment operand
     }
 
 void test15 () {
@@ -163,7 +163,7 @@ void test16 () {
     assert(i == 10);
     assert(j == 12);
     assert(k == 14);
-//  ++(i | j);       // error: lvalue required as increment operand}
+//  ++(i | j);       // error: lvalue required as increment operand
     }
 
 void test17 () {
@@ -183,7 +183,7 @@ void test18 () {
     assert(i == 10);
     assert(j == 12);
     assert(k ==  6);
-//  ++(i ^ j);       // error: lvalue required as increment operand}
+//  ++(i ^ j);       // error: lvalue required as increment operand
     }
 
 void test19 () {
