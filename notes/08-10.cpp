@@ -480,6 +480,92 @@ void test2 () {
     assert(my_equal(b1, e1, b2));}
 #endif
 
+forward_list<int>           x = {2, 3, 4};
+forward_list<int>::iterator b = begin(x);
+cout << *b;
+++b;
+cout << *b;
+--b;        // no
+cout << (b != e);
+cout << (b <  e); // no
+
+list<int>           x = {2, 3, 4};
+list<int>::iterator b = begin(x);
+cout << *b;
+++b;
+cout << *b;
+--b;        // yes
+b += 1;     // no
+b += 10;    // no
+cout << (b <  e); // no
+
+vector<int>           x = {2, 3, 4};
+vector<int>::iterator b = begin(x);
+cout << *b;
+++b;
+cout << *b;
+--b;        // yes
+b += 1;     // yes
+b += 10;    // yes
+cout << (b <  e); // yes
+
+template <typename T1, typename T2>
+bool equal (T1 b1, T1 e1, T2 b2) {
+	while (b1 != e1) {
+		if (*b1 != *b2)
+			return false;
+		++b1;
+		++b2;}
+	return true;}
+
+template <typename T1, typename T2>
+T2 copy (T1 b1, T1 e1, T2 b2) {
+	while (b1 != e1) {
+		*b2 = *b1;
+		++b1;
+		++b2;}
+	return b2;}
+
+template <typename T1, typename T2>
+void fill (T1 b, T1 e, T2 v) {
+	while (b != e) {
+		*b = v;
+		++b;}}
+
+/*
+build our own algorithms
+build our own containers
+*/
+
+/*
+build algorithms that are the require the WEAKEST   iterators
+build containers that         provide the STRONGEST iterators
+*/
+
+#ifdef TEST0
+void test0 () {
+    int  a[5]   = {};
+    int* b      = begin(a) + 1;
+    int* e      = end(a)   - 1;
+    const int v = 2;
+    my_fill(b, e, v);
+    assert(equal(begin(a), end(a), begin({0, 2, 2, 2, 0})));}
+#endif
+
+#ifdef TEST1
+void test1 () {
+    list<int>           x(5);
+    list<int>::iterator b = begin(x);
+    list<int>::iterator e = end(x);
+    const int           v = 2;
+    ++b;
+    --e;
+    my_fill(b, e, v);
+    assert(equal(begin(x), end(x), begin({0, 2, 2, 2, 0})));}
+#endif
+
+
+
 void test6 () {
     int a[] = {2, 3, 4};
 //  int b[] = a;                    // error: initializer fails to determine size of 'b'
@@ -573,37 +659,3 @@ void test14 () {
     array<int, 3> x = {2, 3, 4};
     h2(x);
     assert(equal(begin(x), end(x), begin({2, 3, 4})));}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
