@@ -52,41 +52,50 @@ void test1 () {
     assert(x.size() == 3);}
 
 void test2 () {
+    my_array<int, 3> x = {};
+    assert(x.size() == 3);}
+
+void test3 () {
+    my_array<int, 3> x = {2};
+    assert(x.size() == 3);}
+
+void test4 () {
+//  my_array<int, 3> x = {2, 3, 4, 5}; // error: too many initializers for 'my_array<int, 3>'
     my_array<int, 3> x = {2, 3, 4};
     assert(x[1] == 3);
     x[1] = 5;
     assert(x[1] == 5);}
 
-void test3 () {
+void test5 () {
     const my_array<int, 3> x = {2, 3, 4};
     assert(x[1] == 3);
 //  x[1] = 5;                             // error: assignment of read-only location 'x.my_array<int, 3>::operator[](1)'
     assert(x[1] == 3);}
 
-void test4 () {
+void test6 () {
     const my_array<int, 3> x = {2, 3, 4};
     assert(equal(begin(x), end(x), begin({2, 3, 4})));}
 
-void test5 () {
+void test7 () {
     my_array<int, 3>       x = {2, 3, 4};
     const my_array<int, 3> y = x;
     assert(&*begin(x) != &*begin(y));
     assert(equal(begin(y), end(y), begin({2, 3, 4})));}
 
-void test6 () {
+void test8 () {
     const my_array<int, 3> x = {2, 3, 4};
     my_array<int, 3>       y = {5, 6, 7};
     y = x;
     assert(&*begin(x) != &*begin(y));
     assert(equal(begin(y), end(y), begin({2, 3, 4})));}
 
-void test7 () {
+void test9 () {
     const my_array<int, 5> x = {2, 3, 4, 5, 6};
     const my_array<int, 5> y = {2, 3, 4, 5, 6};
     assert(  x == y);
     assert(!(x != y));}
 
-void test8 () {
+void test10 () {
     const my_array<int, 5> x = {2, 3, 4, 5, 6};
     const my_array<int, 5> y = {2, 3, 4, 5, 7};
     assert(  x != y);
@@ -102,5 +111,7 @@ int main () {
     test6();
     test7();
     test8();
+    test9();
+    test10();
     cout << "Done." << endl;
     return 0;}

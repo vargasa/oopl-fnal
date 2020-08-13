@@ -54,28 +54,28 @@ struct B {
 
 void test1 () {
     cout << "B. copy cntr: ";
-    B<int> x;            // A() B()
-    B<int> y = x;        // A(const A&) B(const B&);
+    B<int> x;                 // A() B()
+    B<int> y = x;             // A(const A&) B(const B&);
     }
 
 void test2 () {
     cout << "B. move cntr: ";
-    B<int> x;            // A() B()
-    B<int> y = move(x);  // A(const A&) B(const B&);
+    B<int> x;                 // A() B()
+    B<int> y = move(x);       // A(const A&) B(const B&);
     }
 
 void test3 () {
     cout << "B. copy asgn: ";
-    B<int> x;            // A() B()
-    B<int> y;            // A() B()
-    y = x;               // =(const A&) =(const B&)
+    B<int> x;                 // A() B()
+    B<int> y;                 // A() B()
+    y = x;                    // =(const A&) =(const B&)
     }
 
 void test4 () {
     cout << "B. move asgn: ";
-    B<int> x;            // A() B()
-    B<int> y;            // A() B()
-    y = move(x);         // =(const A&) =(const B&)
+    B<int> x;                 // A() B()
+    B<int> y;                 // A() B()
+    y = move(x);              // =(const A&) =(const B&)
     }
 
 
@@ -111,28 +111,28 @@ struct C {
 
 void test5 () {
     cout << "C. copy cntr: ";
-    C<int> x;            // A() C()
-    C<int> y = x;        // A(const A&) C(const C&)
+    C<int> x;                 // A() C()
+    C<int> y = x;             // A(const A&) C(const C&)
     }
 
 void test6 () {
     cout << "C. move cntr: ";
-    C<int> x;            // A() C()
-    C<int> y = move(x);  // A(A&&) C(C&&)
+    C<int> x;                 // A() C()
+    C<int> y = move(x);       // A(A&&) C(C&&)
     }
 
 void test7 () {
     cout << "C. copy asgn: ";
-    C<int> x;            // A() C()
-    C<int> y;            // A() C()
-    y = x;               // =(const A&) =(const C&)
+    C<int> x;                 // A() C()
+    C<int> y;                 // A() C()
+    y = x;                    // =(const A&) =(const C&)
     }
 
 void test8 () {
     cout << "C. move asgn: ";
-    C<int> x;            // A() C()
-    C<int> y;            // A() C()
-    y = move(x);         // =(A&&) =(C&&)
+    C<int> x;                 // A() C()
+    C<int> y;                 // A() C()
+    y = move(x);              // =(A&&) =(C&&)
     }
 
 int main () {
