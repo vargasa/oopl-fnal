@@ -48,6 +48,8 @@ FILES :=                    \
     FillT                   \
     Arrays1                 \
     Arrays2                 \
+    Initializations         \
+    Array                   \
     Types                   \
     Iterators               \
     Iteration               \
@@ -63,8 +65,6 @@ FILES :=                    \
     ClassMethods            \
     OperatorOverloading     \
     Conversions             \
-    Initializations         \
-    InitializerList         \
     MethodOverriding1       \
     MethodOverriding2
 
@@ -117,6 +117,8 @@ sync:
     --include "Consts.cpp"                 \
     --include "Arrays1.cpp"                \
     --include "Arrays2.cpp"                \
+    --include "Initializations.cpp"        \
+    --include "Array.cpp"                  \
     --include "Types.cpp"                  \
     --include "Iterators.cpp"              \
     --include "Iteration.cpp"              \
@@ -134,8 +136,6 @@ sync:
     --include "ClassMethods.cpp"           \
     --include "OperatorOverloading.cpp"    \
     --include "Conversions.cpp"            \
-    --include "Initializations.cpp"        \
-    --include "InitializerList.cpp"        \
     --include "Factorial.cpp"              \
     --include "MethodOverriding1.cpp"      \
     --include "MethodOverriding2.cpp"      \

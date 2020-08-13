@@ -26,6 +26,8 @@ void test1 () {
     int l = {2};
     assert(l == 2);}
 
+
+
 void test2 () {
     int i(2.0);
     assert(i == 2);
@@ -38,119 +40,141 @@ void test2 () {
 //  int l = {2.0};  // error: narrowing conversion of '2.0e+0' from 'double' to 'int'
     }
 
-struct A {
-    A (int, int)
-        {}};
+
+
+struct A3 {
+    int i;
+    int j;};
 
 void test3 () {
-    A x(2, 3);
-    assert(&x);
+//  A3 x(2, 3);    // error: no matching function for call to 'A1::A1(int, int)'
 
-    A z{2, 3};
+    A3 z{2, 3};
     assert(&z);
 
-    A t = {2, 3};
+    A3 t = {2, 3};
     assert(&t);}
 
-struct B {
-    explicit B (int, int)
+
+
+struct A4 {
+    int i;
+    int j;
+
+    A4 (int, int)
         {}};
 
 void test4 () {
-    B x(2, 3);
+    A4 x(2, 3);
     assert(&x);
 
-    B z{2, 3};
+    A4 z{2, 3};
     assert(&z);
 
-//  B t = {2, 3}; // error: converting to 'B' from initializer list would use explicit constructor 'B::B(int, int)'
-    }
+    A4 t = {2, 3};
+    assert(&t);}
 
-struct C {
-    C (initializer_list<int>)
+
+
+struct A5 {
+    int i;
+    int j;
+
+    explicit A5 (int, int)
         {}};
 
 void test5 () {
-//  C x(2);      // error: no matching function for call to 'C::C(int)'
+    A5 x(2, 3);
+    assert(&x);
 
-//  C y = 2;     // error: no matching function for call to 'C::C(int)'
-
-    C z{2};
+    A5 z{2, 3};
     assert(&z);
 
-    C t = {2};
-    assert(&t);}
+//  A5 t = {2, 3}; // error: converting to 'B' from initializer list would use explicit constructor 'B::B(int, int)'
+    }
+
+
+
+struct A6 {
+    int i;
+    int j;
+
+    A6 (initializer_list<int>)
+        {}};
 
 void test6 () {
-//  C x(2, 3);    // error: no matching function for call to 'C::C(int)'
+//  A6 x(2, 3);    // error: no matching function for call to 'C::C(int)'
 
-    C z{2, 3};
+    A6 z{2, 3};
     assert(&z);
 
-    C t = {2, 3};
+    A6 t = {2, 3};
     assert(&t);}
 
-struct D {
-    explicit D (initializer_list<int>)
+
+
+struct A7 {
+    int i;
+    int j;
+
+    explicit A7 (initializer_list<int>)
         {}};
 
 void test7 () {
-//  D x(2);     // error: no matching function for call to 'D::D(int)'
+//  A7 x(2, 3);   // error: no matching function for call to 'D::D(int)'
 
-//  D y = 2;    // error: no matching function for call to 'D::D(int)'
-
-    D z{2};
+    A7 z{2, 3};
     assert(&z);
 
-//  D t = {2};  // error: converting to 'D' from initializer list would use explicit constructor 'D::D(std::initializer_list<int>)'
+//  A7 t = {2, 3}; // error: converting to 'D' from initializer list would use explicit constructor 'D::D(std::initializer_list<int>)'
     }
 
-void test8 () {
-//  D x(2, 3);   // error: no matching function for call to 'D::D(int)'
 
-    D z{2, 3};
-    assert(&z);
 
-//  D t = {2, 3}; // error: converting to 'D' from initializer list would use explicit constructor 'D::D(std::initializer_list<int>)'
-    }
+struct A8 {
+    int i;
+    int j;
 
-struct E {
-    E (int)
+    A8 (int)
         {}
 
-    E (initializer_list<int>)
+    A8 (initializer_list<int>)
         {}
 
-    bool operator == (const E&) {
+    bool operator == (const A8&) {
     	return true;}};
 
-void test9 () {
-    E x(2);
+void test8 () {
+    A8 x(2);     // A8(int)
     assert(&x);
 
-    E y = 2;
+    A8 y = 2;    // A8(int)
     assert(&y);
 
-    E z{2};
+    A8 z{2};     // A8(initializer_list<int>)
     assert(&z);
 
-    E t = {2};
+    A8 t = {2};  // A8(initializer_list<int>)
     assert(&t);}
 
-void test10 () {
-    vector<int> x(2);
+
+
+void test9 () {
+    vector<int> x(2);                               // vector<int>(int)
     assert(x.size() == 2);
     assert(equal(begin(x), end(x), begin({0, 0})));
 
 //  vector<int> y = 2;                              // error: conversion from 'int' to non-scalar type 'std::vector<int>' requested
 
-    vector<int> z{2};
+    vector<int> z{2};                               // vector<int>(initializer_list<int>)
     assert(z.size() == 1);
     assert(equal(begin(z), end(z), begin({2})));
 
-    vector<int> t = {2};
+    vector<int> t = {2};                            // vector<int>(initializer_list<int>)
     assert(t.size() == 1);
     assert(equal(begin(t), end(t), begin({2})));}
+
+
 
 int main () {
     cout << "Initializations.c++" << endl;
@@ -163,6 +187,5 @@ int main () {
     test7();
     test8();
     test9();
-    test10();
     cout << "Done." << endl;
     return 0;}
