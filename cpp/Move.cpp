@@ -80,7 +80,7 @@ B g () {
 void test5 () {
     cout << "5. B move constructor: ";
     B x;
-    B y = move(x);                     // l-value, B(const B&)
+    B y = move(x);                     // r-value, B(&&)
     assert(&y);}
 
 void test6 () {
@@ -92,7 +92,7 @@ void test7 () {
     cout << "7. B move assignment: ";
     B x;
     B y;
-    y = move(x);}                      // l-value, =(const B&)
+    y = move(x);}                      // r-value, =(&&)
 
 void test8 () {
     cout << "8. B move assignment: ";
