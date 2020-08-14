@@ -3,6 +3,7 @@
 // ---------
 
 // https://en.cppreference.com/w/cpp/algorithm/fill
+// https://gcc.gnu.org/onlinedocs/gcc-10.2.0/libstdc++/api/a00041_source.html
 
 #include <algorithm>  // equal, fill
 #include <functional> // function

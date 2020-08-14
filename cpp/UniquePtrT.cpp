@@ -117,3 +117,35 @@ TYPED_TEST(UniquePtrFixture, test3) {
     ASSERT_NE(y.get(), nullptr);
     }
     ASSERT_EQ(A::c, 0);}
+
+
+
+unique_ptr<A> f () {
+    assert(A::c == 0);
+    unique_ptr<A> x(new A);
+    assert(A::c == 1);
+    return x;}
+
+TEST(UniquePtrFixture, test6) {
+    ASSERT_EQ(A::c, 0);
+    {
+    unique_ptr<A> x = f();
+    ASSERT_EQ(A::c, 1);
+    }
+    ASSERT_EQ(A::c, 0);}
+
+
+
+my_unique_ptr<A> g () {
+    assert(A::c == 0);
+    my_unique_ptr<A> x(new A);
+    assert(A::c == 1);
+    return x;}
+
+TEST(UniquePtrFixture, test7) {
+    ASSERT_EQ(A::c, 0);
+    {
+    my_unique_ptr<A> x = g();
+    ASSERT_EQ(A::c, 1);
+    }
+    ASSERT_EQ(A::c, 0);}
