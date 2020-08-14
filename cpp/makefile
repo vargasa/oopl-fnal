@@ -50,21 +50,16 @@ FILES :=                    \
     Arrays2                 \
     Initializations         \
     Array                   \
-    Types                   \
-    Iterators               \
-    Iteration               \
-    Functions               \
     FunctionOverloading     \
     Move                    \
-    LocalVariables          \
-    Classes                 \
+    UniquePtr               \
+    Iteration               \
+    Functions               \
     InstanceVariables       \
     ClassVariables          \
     InstanceMethods         \
     ConstMethods            \
     ClassMethods            \
-    OperatorOverloading     \
-    Conversions             \
     MethodOverriding1       \
     MethodOverriding2
 
@@ -119,24 +114,15 @@ sync:
     --include "Arrays2.cpp"                \
     --include "Initializations.cpp"        \
     --include "Array.cpp"                  \
-    --include "Types.cpp"                  \
-    --include "Iterators.cpp"              \
-    --include "Iteration.cpp"              \
-    --include "Functions.cpp"              \
     --include "FunctionOverloading.cpp"    \
     --include "Move.cpp"                   \
-    --include "UniquePtr.cpp"              \
-    --include "UniquePtrs.cpp"             \
-    --include "LocalVariables.cpp"         \
-    --include "Classes.cpp"                \
+    --include "Iteration.cpp"              \
+    --include "Functions.cpp"              \
     --include "InstanceVariables.cpp"      \
     --include "ClassVariables.cpp"         \
     --include "InstanceMethods.cpp"        \
     --include "ConstMethods.cpp"           \
     --include "ClassMethods.cpp"           \
-    --include "OperatorOverloading.cpp"    \
-    --include "Conversions.cpp"            \
-    --include "Factorial.cpp"              \
     --include "MethodOverriding1.cpp"      \
     --include "MethodOverriding2.cpp"      \
     --exclude "*"                          \
@@ -149,6 +135,7 @@ sync:
     --include "EqualT.cpp"                 \
     --include "CopyT.cpp"                  \
     --include "FillT.cpp"                  \
+    --include "UniquePtr.cpp"              \
     --exclude "*"                          \
     ~/exercises/cpp/ .
 	@rsync -p -r -t -u -v --delete         \
