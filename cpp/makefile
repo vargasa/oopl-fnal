@@ -52,7 +52,7 @@ FILES :=                    \
     Array                   \
     FunctionOverloading     \
     Move                    \
-    UniquePtr               \
+    UniquePtrT              \
     Iteration               \
     Functions               \
     InstanceVariables       \
@@ -135,7 +135,7 @@ sync:
     --include "EqualT.cpp"                 \
     --include "CopyT.cpp"                  \
     --include "FillT.cpp"                  \
-    --include "UniquePtr.cpp"              \
+    --include "UniquePtrT.cpp"             \
     --exclude "*"                          \
     ~/exercises/cpp/ .
 	@rsync -p -r -t -u -v --delete         \
