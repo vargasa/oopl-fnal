@@ -113,7 +113,6 @@ sync:
     --include "Arrays1.cpp"                \
     --include "Arrays2.cpp"                \
     --include "Initializations.cpp"        \
-    --include "Array.cpp"                  \
     --include "FunctionOverloading.cpp"    \
     --include "Move.cpp"                   \
     --include "Iteration.cpp"              \
@@ -135,6 +134,7 @@ sync:
     --include "EqualT.cpp"                 \
     --include "CopyT.cpp"                  \
     --include "FillT.cpp"                  \
+    --include "ArrayT.cpp"                 \
     --include "UniquePtrT.cpp"             \
     --exclude "*"                          \
     ~/exercises/cpp/ .
