@@ -75,7 +75,7 @@ TYPED_TEST(ArrayFixture, test0) {
 
 TYPED_TEST(ArrayFixture, test1) {
     using array_type = typename TestFixture::array_type;
-//  array_type x = {2, 3, 4, 5}; // error: too many initializers for 'array_type'
+//  array_type x = {2, 3, 4, 5};                         // error: too many initializers for 'array_type'
     array_type x = {2, 3, 4};
     assert(x[1] == 3);
     x[1] = 5;
@@ -85,7 +85,7 @@ TYPED_TEST(ArrayFixture, test2) {
     using array_type = typename TestFixture::array_type;
     const array_type x = {2, 3, 4};
     assert(x[1] == 3);
-//  x[1] = 5;                             // error: assignment of read-only location 'x.array_type::operator[](1)'
+//  x[1] = 5;                                            // error: assignment of read-only location 'x.array_type::operator[](1)'
     assert(x[1] == 3);}
 
 TYPED_TEST(ArrayFixture, test3) {
