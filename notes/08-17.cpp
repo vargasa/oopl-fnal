@@ -967,3 +967,45 @@ void test9 () {
     assert(x == my_complex<int>(2,  3));
     assert(y == my_complex<int>(2, -3));}
 #endif
+
+template <typename T>
+class my_complex {
+    friend bool operator == (const my_complex& lhs, const my_complex& rhs) {
+        return (lhs._r == rhs._r) && (lhs._i == rhs._i);}
+
+    friend T real (const my_complex& v) {
+        return v._r;}
+
+    friend T imag (const my_complex& v) {
+        return v._i;}
+
+    friend my_complex operator + (my_complex lhs, const my_complex& rhs) {
+        return lhs += rhs;}
+
+    friend my_complex conj (my_complex v) {
+        return {v._r, -v._i};}
+
+    private:
+        T _r = T();
+        T _i = T();
+
+    public:
+        my_complex () = default;
+
+        my_complex (const T& r) :
+                _r (r)
+            {}
+
+        my_complex (const T& r, const T& i) :
+                _r (r),
+                _i (i)
+            {}
+
+        my_complex             (const my_complex&) = default;
+        my_complex& operator = (const my_complex&) = default;
+        ~my_complex            ()                  = default;
+
+        my_complex& operator += (const my_complex& rhs) {
+            _r += rhs._r;
+            _i += rhs._i;
+            return *this;}};
