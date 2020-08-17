@@ -3,6 +3,7 @@
 // -----------
 
 // https://en.cppreference.com/w/c/string/byte/strcmp
+// https://gcc.gnu.org/onlinedocs/gcc-10.2.0/libstdc++/api/a00332_source.html
 
 #include <cstring>    // strcmp
 #include <functional> // function
